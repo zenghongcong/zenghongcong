@@ -121,6 +121,30 @@ var songList = [
 		"singer": "朱主爱",
 		"url":"/static/data/朱主爱 - 好想你.mp3",
 		"img": "http://p1.music.126.net/8FNnsbZO2R7gTiU1O8oIWw==/3383197285041412.jpg?param=300y300"
+	},
+	{
+		"name": "一瞬间",
+		"singer": "丽江小倩",
+		"url":"/static/data/丽江小倩 - 一瞬间.mp3",
+		"img": "http://p1.music.126.net/nMSY-bfEgRMKo020tcZkZA==/31885837220938.jpg?param=300y300"
+	},
+	{
+		"name": "追梦赤子心",
+		"singer": "GALA",
+		"url":"/static/data/GALA - 追梦赤子心.mp3",
+		"img": "http://p1.music.126.net/XDncptlBJ4_LN3hLBx-8aw==/19061133579343591.jpg?param=300y300"
+	},
+	{
+		"name": "十指紧扣",
+		"singer": "张智霖",
+		"url":"/static/data/张智霖 - 十指紧扣.mp3",
+		"img": "http://p1.music.126.net/Bt-48siHvx6KAlWi5N7WBw==/125344325584438.jpg?param=300y300"
+	},
+	{
+		"name": "塑料袋",
+		"singer": "乔杉",
+		"url":"/static/data/乔杉 - 塑料袋.mp3",
+		"img": "http://p1.music.126.net/Bw30uQ8MVANtLBn4C-OGWQ==/109951163035595789.jpg?param=300y300"
 	}
 ]
 export default {
