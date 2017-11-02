@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div class="musicCtrl">
-				<i class="playType icon-music-shunxu"></i>
+				<i @click="switchPattern" :class="{'icon-music-shunxu': pattern == 1,'icon-music-random': pattern == 2,'icon-music-danqu1': pattern == 3}" class="playType"></i>
 				<i @click="switchSong(2)" class="prev icon-prevdetail"></i>
 				<i @click="togglePlay" :class="playStatus ? 'icon-pause-detail' : 'icon-playdetail'" class="playPause"></i>
 				<i @click="switchSong(1)" class="next icon-nextdetail"></i>
@@ -48,9 +48,9 @@
 				<div v-show="showList" class="list-content">
 					<div class="title">
 						<div class="play-type">
-							<i class="icon-music-shunxu"></i>
-							<span>列表循环</span>
-							<span>(5)</span>
+							<i :class="{'icon-music-shunxu': pattern == 1,'icon-music-random': pattern == 2,'icon-music-danqu1': pattern == 3}"></i>
+							<span>{{patternText[pattern]}}</span>
+							<span>({{songList.length}})</span>
 						</div>
 						<div class="border-1px"></div>
 					</div>
@@ -146,7 +146,7 @@ var songList = [
 		"url":"/static/data/乔杉 - 塑料袋.mp3",
 		"img": "http://p1.music.126.net/Bw30uQ8MVANtLBn4C-OGWQ==/109951163035595789.jpg?param=300y300"
 	}
-]
+];
 export default {
   name: 'Index',
   data () {
@@ -158,6 +158,12 @@ export default {
       	url: '',
       	img: ''
       },
+      patternText:{
+      	1: '列表循环',
+      	2: '随机播放',
+      	3: '单曲循环'
+      },
+      pattern: 1, //播放模式 -- 1：列表循环 2：随机播放 3：单曲循环
       playStatus: false,
       loaded: false,
       index: Math.ceil(Math.random()*(songList.length-1)),
@@ -176,14 +182,14 @@ export default {
   	this.$nextTick(function(){
   		this.setSong();
   		this.loaded = true;
-  	});
+  	},200);
   },
   methods: {
   	musicTimeUpdate(){
   		var time = Math.floor(this.$refs.audio.currentTime),
-					m = Math.floor(time/60),
-					s = time%60;
-			this.pastTime = (m < 10 ? '0'+m : m) + ':' + (s < 10 ? '0'+s : s);
+			m = Math.floor(time/60),
+			s = time%60;
+		this.pastTime = (m < 10 ? '0'+m : m) + ':' + (s < 10 ? '0'+s : s);
   		this.progress = (time/this.duration)*100;
   	},
   	musicCanPlay(){
@@ -193,7 +199,7 @@ export default {
 			this.totalTime = (m < 10 ? '0'+m : m) + ':' + (s < 10 ? '0'+s : s);
   	},
   	musicEnded(){
-  		this.switchSong();
+  		this.switchSong(1);
   	},
   	setSong(){
   		this.song = songList[this.index];
@@ -203,19 +209,23 @@ export default {
   	},
   	switchSong(type){
   		var total = songList.length;
-		if(type == total-1){
-			if(this.index == total - 1){
-				this.index = 0;
+  		if(this.pattern == 1){
+  			if(type == 1){
+				if(this.index == total - 1){
+					this.index = 0;
+				}else{
+					this.index += 1;
+				}
 			}else{
-				this.index += 1;
+				if(this.index == 0){
+					this.index = total - 1;
+				}else{
+					this.index -= 1;
+				}
 			}
-		}else{
-			if(this.index == 0){
-				this.index = total - 1;
-			}else{
-				this.index -= 1;
-			}
-		}
+  		}else if(this.pattern == 2){
+  			this.index = Math.ceil(Math.random()*(total-1));
+  		}
 		this.setSong();
 		this.togglePlay();
   	},
@@ -245,6 +255,13 @@ export default {
 		this.setSong();
 		this.togglePlay();
 		this.toggleMusicList();
+	},
+	switchPattern(){
+		if(this.pattern == 3){
+			this.pattern = 1;
+		}else{
+			this.pattern++;
+		}
 	}
   }
 }

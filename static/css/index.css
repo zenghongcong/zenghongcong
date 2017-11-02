@@ -52,11 +52,12 @@ footer .musicCtrl i.playType, footer .musicCtrl i.menu{ font-size: 20px; color: 
 .music-list .list-content .title{ width: 100%; position: relative; height: 50px; font-size: 0; }
 .music-list .list-content .title .play-type{ display: inline-block; width: auto; height: 100%; line-height: 50px; padding: 0 15px; }
 .music-list .list-content .title .play-type i{ color: #666; font-size: 18px; display: inline-block; width: 20px; height: 20px; vertical-align: middle; }
-.music-list .list-content .title .play-type span{ color: #666; vertical-align: middle; font-size: 14px; font-weight: 300; }
+.music-list .list-content .title .play-type span{ padding: 0 2px; color: #666; vertical-align: middle; font-size: 14px; font-weight: 300; }
 .music-list .list-content .title .border-1px{ position: relative; }
 .music-list .list-content .title .border-1px:after{ display: block; position: absolute; left: 0; bottom: 0; width: 100%; border-top: 1px solid rgba(7,17,27,.1); content: " "; -webkit-transform: scaleY(.5); transform: scaleY(.5); }
 .music-list .list-content .container{ height: calc(100% - 50px); margin: 0; padding: 0; overflow: scroll; -webkit-overflow-scrolling: touch; padding: 6px 0; }
 .music-list .list-content .container li{ margin: 0; padding: 0; list-style: none; height: 42px; line-height: 42px; padding: 0 15px; font-weight: 400; font-size: 14px; color: #666; overflow: hidden; }
+.music-list .list-content .container li:active{ opacity: .6; }
 .music-list .list-content .container li .playingicon{ display: none; font-size: 14px; vertical-align: middle; color: #c62f2f; }
 .music-list .list-content .container li.active .playingicon{ display: inline-block; }
 .music-list .list-content .container li .border-1px{ position: relative; }
