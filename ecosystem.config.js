@@ -16,7 +16,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:zenghongcong/zenghongcong.git',
       path : '/var/www/zenghongcong',
-      'post-deploy' : 'npm install && npm run build'
+      'post-deploy' : 'npm install && npm run buildd && pm2 reload ecosystem.config.js --env production'
     }
   }
 };
