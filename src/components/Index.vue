@@ -279,7 +279,7 @@ html, body{ line-height: 1; height: 100%; font-family: "microsoft yahei"; backgr
 			
 .mask-bg{ position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-size: cover !important; background-position: center center !important; -webkit-filter: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiP…vbj0iMTAiIC8+DQogICAgICAgIDwvZmlsdGVyPg0KICAgIDwvZGVmcz4NCjwvc3ZnPg==#blur); filter: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiP…vbj0iMTAiIC8+DQogICAgICAgIDwvZmlsdGVyPg0KICAgIDwvZGVmcz4NCjwvc3ZnPg==#blur); -webkit-filter: blur(30px); filter: blur(30px); }
 			
-header{ position: absolute; top: 0; left: 0; height: 10vh; padding: 1vh 50px 0 50px; }
+header{ position: absolute; top: 0; left: 0; height: 10vh; padding: 1vh 50px 0 50px !important; }
 header .name, header .singer{ margin: 0; color: #fff; font-size: 14px; padding: 4px 0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
 
 .content{ position: absolute; top: 10vh; left: 0; bottom: 20vh; right: 0; overflow: hidden; }
