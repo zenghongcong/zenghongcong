@@ -1,7 +1,7 @@
 <template>
 	<div class="music">
 		<audio ref="audio" @timeupdate="musicTimeUpdate" @canplay="musicCanPlay" @ended="musicEnded"></audio>
-		<div class="mask-bg" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVeFn8MQdvCclfUzf00HJ4K8uLrTlLDsyU_DZpqs6f75k6Nd7r);"></div>
+		<div class="mask-bg" style="background-image: url(../../static/images/7636664_194103632149_2.jpg)"></div>
 		<header>
 			<p class="name">{{song.name}}</p>
 			<p class="singer">{{song.singer}}</p>
