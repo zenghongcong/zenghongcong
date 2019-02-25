@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name: 'p',
+    name: 'zenghongcong',
     env: {
       COMMON_VARIABLE: 'true'
     },
@@ -12,7 +12,7 @@ module.exports = {
   deploy : {
     production : {
       user : 'root',
-      host : '202.182.113.102',
+      host : '139.180.134.229',
       ref  : 'origin/master',
       repo : 'git@github.com:zenghongcong/zenghongcong.git',
       path : '/var/www/zenghongcong',
