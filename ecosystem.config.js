@@ -15,7 +15,7 @@ module.exports = {
       host : '139.180.134.229',
       ref  : 'origin/master',
       repo : 'git@github.com:zenghongcong/zenghongcong.git',
-      path : '/www/zenghongcong',
+      path : '/var/www/zenghongcong',
       'post-deploy' : 'npm install && npm run build'
     }
   }
