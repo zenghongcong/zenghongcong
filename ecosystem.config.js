@@ -12,7 +12,7 @@ module.exports = {
   deploy : {
     production : {
       user : 'root',
-      host : '139.180.134.229',
+      host : '207.148.74.123',
       ref  : 'origin/master',
       repo : 'git@github.com:zenghongcong/zenghongcong.git',
       path : '/www/zenghongcong',
