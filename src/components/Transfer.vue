@@ -218,9 +218,9 @@ export default {
 }
 
 .wechat .base ul li span:first-child {
-  width: 1.18rem;
+  width: 1.24rem;
   color: #888;
-  margin-right: 0.21rem;
+  margin-right: 0.2rem;
 }
 
 .wechat .base ul li span:last-child {
