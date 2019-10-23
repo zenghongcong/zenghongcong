@@ -364,13 +364,13 @@ export default {
 
 .wechat .popup .inner li span {
   display: block;
-  width: 1.5rem;
+  width: 1.8rem;
   height: 0.6rem;
   line-height: 0.6rem;
 }
 
 .wechat .popup .inner li input {
-  width: 4.8rem;
+  width: 4.5rem;
   height: 0.6rem;
   padding: 0 0.1rem;
   border: 1px solid #ebebeb;
