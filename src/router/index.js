@@ -2,20 +2,42 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
 import Wechat from '@/components/Wechat'
+import Transfer from '@/components/Transfer'
 
 Vue.use(Router)
 
-export default new Router({
+let router = new Router({
   routes: [
     {
       path: '/',
       name: 'index',
-      component: Index
+      component: Index,
+      meta:{
+        title: '个人主页'
+      }
     },
     {
       path: '/wechat',
       name: 'wechat',
-      component: Wechat
+      component: Wechat,
+      meta:{
+        title: '账单详情'
+      }
+    },
+    {
+      path: '/transfer',
+      name: 'transfer',
+      component: Transfer,
+      meta:{
+        title: '账单详情'
+      }
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
+});
+
+export default router;
