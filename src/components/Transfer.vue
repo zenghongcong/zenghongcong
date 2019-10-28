@@ -1,10 +1,12 @@
 <template>
-  <div class="wechat">
+  <div class="transfer">
     <a @click="edit" id="btn-edit" href="javascript:;">编辑</a>
     <div class="base">
       <div class="avatar"></div>
       <p id="r1" class="name">{{r1}}</p>
-      <p id="r2" class="price">{{r2}}</p>
+      <p id="r2" class="price">
+        <span v-for="(item, index) in price" :key="index" class="p-icon" :class="item"></span>
+      </p>
       <ul class="border-row">
         <li class="flex">
           <span>当前状态</span>
@@ -96,7 +98,6 @@ import "../../static/assets/reset.css";
 import "../../static/assets/base.css";
 require("../../static/assets/JsBarcode.all.min.js");
 export default {
-  name: "Index",
   data() {
     return {
       // r0: localStorage.getItem("imgLink") || "../../static/assets/transfer.jpg",
@@ -120,7 +121,22 @@ export default {
       show: false
     };
   },
-  computed: {},
+  computed: {
+    price(){
+      let arr = (this.r2+"").split("");
+      return arr.map(item => {
+        let num = item;
+        if(num === '.'){
+          num = "dot";
+        }else if(num === '-'){
+          num = "sub";
+        }else if(num === '+'){
+          num = "add";
+        }
+        return `icon-${num}`;
+      })
+    }
+  },
   methods: {
     edit() {
       this.v0 = this.r0;
@@ -158,7 +174,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.wechat {
+.transfer {
   min-height: 100%;
   background: #f8f8f8;
   font-family: "PingFang SC", Helvetica, "Helvetica Neue", Arial,
@@ -166,15 +182,15 @@ export default {
     sans-serif;
 }
 
-.wechat .base {
+.transfer .base {
   background: #fff;
-  padding: 0.5rem 0 0.6rem;
+  padding: 0.38rem 0 0.6rem;
   margin-bottom: 0.14rem;
 }
 
-.wechat .base .avatar {
-  width: 0.8rem;
-  height: 0.8rem;
+.transfer .base .avatar {
+  width: 0.95rem;
+  height: 0.95rem;
   margin: 0 auto;
   background-image: url(../../static/assets/transfer.jpg);
   background-repeat: no-repeat;
@@ -182,64 +198,63 @@ export default {
   border-radius: 50%;
 }
 
-.wechat .base .name {
+.transfer .base .name {
   line-height: 1.5;
   text-align: center;
   padding: 0 0.5rem;
-  margin-top: 0.36rem;
+  margin-top: 0.25rem;
   font-size: 0.28rem;
   color: #000;
 }
 
-.wechat .base .price {
-  font-family: PingFang SC;
+.transfer .base .price {
   text-align: center;
   margin-top: 0.24rem;
-  font-size: 0.46rem;
+  font-size: 0.44rem;
   color: #000;
-  font-weight: 700;
+  font-weight: bold;
 }
 
-.wechat .base ul {
+.transfer .base ul {
   overflow: hidden;
   width: 6.3rem;
   margin: 0.82rem auto 0;
   padding: 0.26rem 0 0;
 }
 
-.wechat .base ul li {
+.transfer .base ul li {
   margin-top: 0.14rem;
   font-size: 0.24rem;
   color: #353535;
   line-height: 1.5;
 }
 
-.wechat .base ul li span {
+.transfer .base ul li span {
   display: block;
 }
 
-.wechat .base ul li span:first-child {
+.transfer .base ul li span:first-child {
   width: 1.24rem;
   color: #888;
   margin-right: 0.2rem;
 }
 
-.wechat .base ul li span:last-child {
+.transfer .base ul li span:last-child {
   width: 4.7rem;
 }
 
-.wechat .base .bar-code {
+.transfer .base .bar-code {
   overflow: hidden;
   margin-top: 0.48rem;
 }
 
-.wechat .base .bar-code img {
+.transfer .base .bar-code img {
   max-width: 95%;
   max-height: 1.1rem;
   margin: 0 auto;
 }
 
-.wechat .base .bar-code p {
+.transfer .base .bar-code p {
   margin: 0.02rem 0 0.28rem;
   text-align: center;
   letter-spacing: 2px;
@@ -247,17 +262,17 @@ export default {
   color: #000;
 }
 
-.wechat .after-sale {
+.transfer .after-sale {
   padding: 0 0.45rem;
   background: #fff;
 }
 
-.wechat .after-sale.border-row:before {
+.transfer .after-sale.border-row:before {
   top: initial;
   bottom: 0;
 }
 
-.wechat .after-sale li {
+.transfer .after-sale li {
   position: relative;
   height: 1.1rem;
   line-height: 1.1rem;
@@ -270,7 +285,7 @@ export default {
   color: #353535;
 }
 
-.wechat .after-sale li:after {
+.transfer .after-sale li:after {
   content: "";
   position: absolute;
   top: 0;
@@ -284,20 +299,20 @@ export default {
   transform: rotate(-90deg);
 }
 
-.wechat .after-sale li span:last-child {
+.transfer .after-sale li span:last-child {
   margin-right: 0.3rem;
   color: #c3c3c3;
 }
 
-.wechat .flex {
+.transfer .flex {
   display: flex;
 }
 
-.wechat .border-row {
+.transfer .border-row {
   position: relative;
 }
 
-.wechat .border-row:before {
+.transfer .border-row:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -311,7 +326,7 @@ export default {
   background: #e5e5e5;
 }
 
-.wechat #btn-edit {
+.transfer #btn-edit {
   opacity: 0;
   position: fixed;
   top: 0;
@@ -327,7 +342,7 @@ export default {
   box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.4);
 }
 
-.wechat .popup {
+.transfer .popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -336,7 +351,7 @@ export default {
   height: 100%;
 }
 
-.wechat .popup .mask {
+.transfer .popup .mask {
   position: absolute;
   top: 0;
   left: 0;
@@ -345,7 +360,7 @@ export default {
   background: rgba(0, 0, 0, 0.7);
 }
 
-.wechat .popup .inner {
+.transfer .popup .inner {
   position: absolute;
   z-index: 13;
   top: 0;
@@ -360,18 +375,18 @@ export default {
   border-radius: 0.2rem;
 }
 
-.wechat .popup .inner li {
+.transfer .popup .inner li {
   margin-bottom: 0.2rem;
 }
 
-.wechat .popup .inner li span {
+.transfer .popup .inner li span {
   display: block;
   width: 1.8rem;
   height: 0.6rem;
   line-height: 0.6rem;
 }
 
-.wechat .popup .inner li input {
+.transfer .popup .inner li input {
   width: 4.5rem;
   height: 0.6rem;
   padding: 0 0.1rem;
@@ -379,7 +394,7 @@ export default {
   margin: 0;
 }
 
-.wechat .popup .inner #btn-save {
+.transfer .popup .inner #btn-save {
   display: block;
   width: 80%;
   height: 0.8rem;
@@ -389,5 +404,63 @@ export default {
   color: #fff;
   background-color: #04be02;
   border-radius: 0.05rem;
+}
+.p-icon{
+  display: inline-flex;
+  justify-content: center;
+  height: .4rem;
+  background-size: 100% 100% !important;
+}
+.p-icon.icon-sub{
+  width: .2706rem;
+  background: url(../../static/assets/sub.jpg);
+}
+.p-icon.icon-add{
+  width: .2765rem;
+  background: url(../../static/assets/add.jpg);
+}
+.p-icon.icon-dot{
+  width: .1294rem;
+  background: url(../../static/assets/dot.jpg);
+}
+.p-icon.icon-1{
+  width: .2235rem;
+  background: url(../../static/assets/1.jpg);
+}
+.p-icon.icon-2{
+  width: .28235rem;
+  background: url(../../static/assets/2.jpg);
+}
+.p-icon.icon-3{
+  width: .2706rem;
+  background: url(../../static/assets/3.jpg);
+}
+.p-icon.icon-4{
+  width: .2941rem;
+  background: url(../../static/assets/4.jpg);
+}
+.p-icon.icon-5{
+  width: .2647rem;
+  background: url(../../static/assets/5.jpg);
+}
+.p-icon.icon-6{
+  width: .2706rem;
+  background: url(../../static/assets/6.jpg);
+}
+.p-icon.icon-7{
+  width: .24705rem;
+  background: url(../../static/assets/7.jpg);
+}
+.p-icon.icon-8{
+  width: .2765rem;
+  background: url(../../static/assets/8.jpg);
+}
+.p-icon.icon-9{
+  width: .28235rem;
+  background: url(../../static/assets/9.jpg);
+}
+.p-icon.icon-0{
+  width: .2706rem;
+  background: url(../../static/assets/0.jpg);
 }
 </style>

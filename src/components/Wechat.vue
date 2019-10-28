@@ -214,13 +214,13 @@ export default {
 
 .wechat .base {
   background: #fff;
-  padding: 0.5rem 0 0.6rem;
+  padding: 0.38rem 0 0.6rem;
   margin-bottom: 0.14rem;
 }
 
 .wechat .base .avatar {
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 0.95rem;
+  height: 0.95rem;
   margin: 0 auto;
   background-image: url(../../static/assets/avatar.jpg);
   background-repeat: no-repeat;
@@ -232,13 +232,12 @@ export default {
   line-height: 1.5;
   text-align: center;
   padding: 0 0.5rem;
-  margin-top: 0.36rem;
+  margin-top: 0.25rem;
   font-size: 0.28rem;
   color: #000;
 }
 
 .wechat .base .price {
-  font-family: PingFang SC;
   text-align: center;
   margin-top: 0.24rem;
   font-size: 0.46rem;
