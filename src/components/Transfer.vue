@@ -192,6 +192,7 @@ export default {
 }
 
 .wechat .base .price {
+  font-family: PingFang SC;
   text-align: center;
   margin-top: 0.24rem;
   font-size: 0.46rem;

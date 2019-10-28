@@ -238,25 +238,26 @@ export default {
 }
 
 .wechat .base .price {
+  font-family: PingFang SC;
   text-align: center;
-    margin-top: .24rem;
-    font-size: .46rem;
-    color: #000;
-    font-weight: 700;
+  margin-top: 0.24rem;
+  font-size: 0.46rem;
+  color: #000;
+  font-weight: 700;
 }
 
 .wechat .base ul {
   overflow: hidden;
-    width: 6.3rem;
-    margin: .82rem auto 0;
-    padding: .26rem 0 0;
+  width: 6.3rem;
+  margin: 0.82rem auto 0;
+  padding: 0.26rem 0 0;
 }
 
 .wechat .base ul li {
-  margin-top: .14rem;
-    font-size: .24rem;
-    color: #353535;
-    line-height: 1.5;
+  margin-top: 0.14rem;
+  font-size: 0.24rem;
+  color: #353535;
+  line-height: 1.5;
 }
 
 .wechat .base ul li span {
@@ -265,7 +266,7 @@ export default {
 
 .wechat .base ul li span:first-child {
   width: 1.38rem;
-    color: #888;
+  color: #888;
 }
 
 .wechat .base ul li span:last-child {
@@ -303,15 +304,15 @@ export default {
 
 .wechat .after-sale li {
   position: relative;
-    height: 1.1rem;
-    line-height: 1.1rem;
-    padding: 0 .15rem;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    width: 6.6rem;
-    margin: 0 auto;
-    font-size: .24rem;
-    color: #353535;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  padding: 0 0.15rem;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 6.6rem;
+  margin: 0 auto;
+  font-size: 0.24rem;
+  color: #353535;
 }
 
 .wechat .after-sale li:after {
