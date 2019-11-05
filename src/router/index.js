@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/components/Index'
 import Wechat from '@/components/Wechat'
 import Transfer from '@/components/Transfer'
+import Taobao from '@/components/Taobao'
 
 Vue.use(Router)
 
@@ -28,6 +29,14 @@ let router = new Router({
       path: '/transfer',
       name: 'transfer',
       component: Transfer,
+      meta:{
+        title: '账单详情'
+      }
+    },
+    {
+      path: '/taobao',
+      name: 'taobao',
+      component: Taobao,
       meta:{
         title: '账单详情'
       }
