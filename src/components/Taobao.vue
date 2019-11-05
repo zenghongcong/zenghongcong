@@ -328,7 +328,7 @@ body {
   padding-right: 0.28rem;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: 0.24rem;
+  font-size: 0.27rem;
 }
 
 .taobao .after-sale .arrow {
