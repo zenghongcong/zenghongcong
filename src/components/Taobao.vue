@@ -8,7 +8,7 @@
       </div>
       <p id="r2" class="price">{{r2}}</p>
       <p id="r3" class="status fc-888">交易成功</p>
-      <ul class="border-row">
+      <ul>
         <li class="flex">
           <span class="fc-a5">付款方式</span>
           <div class="flex">
