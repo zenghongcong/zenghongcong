@@ -276,7 +276,7 @@ body {
 
 .taobao .base ul {
   margin-left: 0.28rem;
-  padding: 0.12rem 0.28rem 0 0;
+  padding: 0.16rem 0.28rem .18rem 0;
 }
 
 .taobao .base ul li {
