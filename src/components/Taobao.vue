@@ -66,7 +66,7 @@
       <li class="flex">
         <span>账单分类</span>
         <div class="flex">
-          <span class="fc-999">服饰美容</span>
+          <span class="fc-999">{{r10}}</span>
           <span class="arrow"></span>
         </div>
       </li>
@@ -133,6 +133,10 @@
             <span>商家订单号：</span>
             <input v-model="v9" id="v9" type="text" />
           </li>
+          <li class="flex">
+            <span>账单分类：</span>
+            <input v-model="v10" id="v10" type="text" />
+          </li>
         </ul>
         <a @click="save" id="btn-save" href="javascript:;">保存</a>
       </div>
@@ -160,6 +164,7 @@ export default {
       r7: "2019-11-01 15:21",
       r8: "2019110122001136775710578983",
       r9: "T200P690719651732967064",
+      r10: "服饰美容",
 
       v0: "",
       v1: "",
@@ -171,6 +176,7 @@ export default {
       v7: "",
       v8: "",
       v9: "",
+      v10: "",
 
       show: false
     };
@@ -188,6 +194,7 @@ export default {
       this.v7 = this.r7;
       this.v8 = this.r8;
       this.v9 = this.r9;
+      this.v10 = this.r10;
       this.show = !this.show;
     },
     save() {
@@ -201,6 +208,7 @@ export default {
       this.r7 = this.v7;
       this.r8 = this.v8;
       this.r9 = this.v9;
+      this.r10 = this.v10;
       this.show = !this.show;
     }
   }
