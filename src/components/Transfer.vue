@@ -53,10 +53,10 @@
       <div @click="show = !show" class="mask"></div>
       <div class="inner">
         <ul>
-          <li class="flex">
+          <!-- <li class="flex">
             <span>图标：</span>
             <input v-model="v0" id="v0" type="text" placeholder="填图标链接" />
-          </li>
+          </li> -->
           <li class="flex">
             <span>收款方信息：</span>
             <input v-model="v1" id="v1" type="text" />
@@ -96,7 +96,8 @@
 import "../../static/assets/rem.js";
 import "../../static/assets/reset.css";
 import "../../static/assets/base.css";
-require("../../static/assets/JsBarcode.all.min.js");
+// import VConsole from 'vconsole';
+// new VConsole();
 export default {
   data() {
     return {
@@ -109,7 +110,7 @@ export default {
       r6: localStorage.getItem("payTime") || "2018-12-19 18:24:45",
       r7: localStorage.getItem("payWay") || "10000499012019102300120447892271",
 
-      v0: "",
+      // v0: "",
       v1: "",
       v2: "",
       v3: "",
@@ -139,7 +140,7 @@ export default {
   },
   methods: {
     edit() {
-      this.v0 = this.r0;
+      // this.v0 = this.r0;
       this.v1 = this.r1;
       this.v2 = this.r2;
       this.v3 = this.r3;
@@ -150,15 +151,7 @@ export default {
       this.show = !this.show;
     },
     save() {
-      localStorage.setItem("imgLink", this.v0);
-      localStorage.setItem("shopName", this.v1);
-      localStorage.setItem("price", this.v2);
-      localStorage.setItem("status", this.v3);
-      localStorage.setItem("goods", this.v4);
-      localStorage.setItem("shopNameAll", this.v5);
-      localStorage.setItem("payTime", this.v6);
-      localStorage.setItem("payWay", this.v7);
-      this.r0 = this.v0;
+      // this.r0 = this.v0;
       this.r1 = this.v1;
       this.r2 = this.v2;
       this.r3 = this.v3;
@@ -167,6 +160,14 @@ export default {
       this.r6 = this.v6;
       this.r7 = this.v7;
       this.show = !this.show;
+      // localStorage.setItem("imgLink", this.v0);
+      localStorage.setItem("shopName", this.v1);
+      localStorage.setItem("price", this.v2);
+      localStorage.setItem("status", this.v3);
+      localStorage.setItem("goods", this.v4);
+      localStorage.setItem("shopNameAll", this.v5);
+      localStorage.setItem("payTime", this.v6);
+      localStorage.setItem("payWay", this.v7);
     }
   }
 };
