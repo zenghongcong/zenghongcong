@@ -24,7 +24,7 @@
         </li>
         <li class="flex">
           <span>支付方式</span>
-          <span id="r7">{{r7}})</span>
+          <span id="r7">{{r7}}</span>
         </li>
         <li class="flex">
           <span>交易单号</span>
