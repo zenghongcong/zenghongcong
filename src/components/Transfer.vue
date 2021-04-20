@@ -35,10 +35,10 @@
         <span>发起群收款</span>
         <span></span>
       </li>
-      <li class="flex border-row">
+      <!-- <li class="flex border-row">
         <span>联系收款方</span>
         <span></span>
-      </li>
+      </li> -->
       <li class="flex border-row">
         <span>对订单有疑惑</span>
         <span></span>
